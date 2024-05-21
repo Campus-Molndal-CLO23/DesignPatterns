@@ -73,3 +73,11 @@ Tänk er att vi har en applikation som ska hantera olika typer av dokument: text
 Genom att använda Simple Factory kan vi skapa flexibla och utbytbara lösningar i våra program. Detta designmönster är ett kraftfullt verktyg i en utvecklares verktygslåda och hjälper till att skapa robusta och underhållbara applikationer.
 
 Och vi slipper skriva en massa new-kommandon i klientkoden! Yay!
+
+---
+
+# Kod
+
+https://github.com/Campus-Molndal-CLO23/DesignPatterns/blob/main/lecture1/code/02_simple_factory.cs
+
+https://github.com/Campus-Molndal-CLO23/DesignPatterns/blob/main/lecture1/code/02_simple_factory2.cs

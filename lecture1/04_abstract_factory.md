@@ -105,3 +105,8 @@ Med Abstract Factory kan vi skapa olika dokument på ett strukturerat sätt.
 
 Genom att använda Abstract Factory kan vi skapa flexibla och skalbara lösningar som kan utökas med nya produktfamiljer utan att ändra befintlig kod.
 
+---
+
+# Kod
+
+https://github.com/Campus-Molndal-CLO23/DesignPatterns/blob/main/lecture1/code/04_abstract_factory.cs

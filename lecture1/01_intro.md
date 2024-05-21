@@ -89,5 +89,4 @@ paginate: true
 
 # Kodexempel
 
-För kodexempel se 
-https://github.com/Campus-Molndal-CLO23/DesignPatterns/
+https://github.com/Campus-Molndal-CLO23/DesignPatterns/blob/main/lecture1/code/

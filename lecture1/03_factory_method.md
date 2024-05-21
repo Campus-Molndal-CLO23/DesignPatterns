@@ -99,3 +99,9 @@ Har ni några frågor eller något som behöver förtydligas? Tveka inte att fr�
 # Slutord
 
 Genom att använda Factory Method kan vi skapa flexibla och utbytbara lösningar i våra program. Detta designmönster är ett kraftfullt verktyg i en utvecklares verktygslåda och hjälper till att skapa robusta och underhållbara applikationer.
+
+---
+
+# Kod
+
+https://github.com/Campus-Molndal-CLO23/DesignPatterns/blob/main/lecture1/code/03_factory_method.cs
