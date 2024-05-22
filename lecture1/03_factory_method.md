@@ -6,7 +6,6 @@ paginate: true
 backgroundColor: #1E1E1E
 color: #FFFFFF
 css: |
-css: |
   img {
     max-width: 70%;
     max-height: 70%;
