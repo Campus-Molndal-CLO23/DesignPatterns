@@ -126,6 +126,8 @@ Prototype-mönstret låter oss klona ett objekt istället för att skapa det fr�
 - När objekt har komplex initieringslogik.
 - När objekt måste konfigureras på ett specifikt sätt innan användning.
 - När objekt skapas dynamiskt och deras exakta typer inte är kända vid kompileringstid.
+- Editera och välj om ändringar ska sparas
+- Undo/redo funktionalitet
 
 ---
 

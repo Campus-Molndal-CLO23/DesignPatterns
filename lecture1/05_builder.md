@@ -81,8 +81,7 @@ peter.parker@webcrawler.us
 I kod ser det ut så här, med fluently syntax:
 
 ```csharp
-var emailBuilder = new EmailBuilder();
-var email = emailBuilder
+var email = new EmailBuilder()
     .WithName("Peter")
     .WithLastName("Parker")
     .WithDomain("webcrawler")

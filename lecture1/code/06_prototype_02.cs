@@ -40,7 +40,8 @@ class Client
 
         // Klona originalmonstret
         Monster clonedMonster = (Monster)originalMonster.Clone();
-
+        clonedMonster.Name = "Cloned Orc";
+        
         // Visa original- och klonade monster
         Console.WriteLine("Original Monster:");
         Console.WriteLine(originalMonster);

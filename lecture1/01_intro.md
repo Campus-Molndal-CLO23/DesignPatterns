@@ -10,6 +10,17 @@ paginate: true
 
 ---
 
+# All material finns här
+
+https://github.com/Campus-Molndal-CLO23/DesignPatterns/
+
+---
+# Favvolänk
+
+https://refactoring.guru/design-patterns
+
+---
+
 # Introduktion till Gang of Four (GoF)
 
 - **Författare**: Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides

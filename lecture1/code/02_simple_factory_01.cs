@@ -94,6 +94,8 @@ public class DocumentFactory
                 return new WordDocument();
             case "excel":
                 return new ExcelDocument();
+            case "katt":
+                return new CatDocument();
             default:
                 throw new ArgumentException("Invalid document type");
         }
