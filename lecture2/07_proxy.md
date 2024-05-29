@@ -156,6 +156,8 @@ Displaying image2.jpg
 - Kontrollerar åtkomst till ett objekt och kan tillföra extra funktionalitet.
 - Kan spara resurser genom att initiera objekt på begäran (lazy initialization).
 
+---
+
 ### Nackdelar
 
 - Kan öka komplexiteten i koden med fler klasser och gränssnitt.

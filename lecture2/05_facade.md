@@ -157,6 +157,8 @@ Det visar att det inte finns enbart ett sätt att använda designmönster, utan 
 
 Vi har tidigare använt Facade-mönstret för att förenkla kommunikationen med databaser. Istället för att hantera alla steg för databasanslutning, kommandon och transaktioner, kan en Facade tillhandahålla ett förenklat gränssnitt:
 
+---
+
 ```csharp
 // Facade for Database Operations
 public class DatabaseFacade

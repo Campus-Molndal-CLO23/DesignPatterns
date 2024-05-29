@@ -47,6 +47,11 @@ public class TreeType
         _color = color;
         _texture = texture;
     }
+```
+
+----
+
+```csharp
 
     public void Draw(int x, int y)
     {
@@ -142,7 +147,9 @@ class Program
 }
 ```
 
-Output:
+---
+
+# Output:
 
 ```
 Drawing tree of type Oak at (1, 1)
