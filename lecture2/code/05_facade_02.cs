@@ -95,3 +95,18 @@ namespace FacadePatternExample2
 
 // Output:
 // John Doe
+
+
+// Förklaring:
+// I detta exempel har vi fyra klasser: DatabaseConnector, DatabaseCommand, 
+// DatabaseDisconnector och DatabaseManager.
+// DatabaseConnector klassen hanterar anslutningen till databasen,
+// DatabaseCommand klassen hanterar att köra frågor mot databasen,
+// DatabaseDisconnector klassen hanterar att koppla från databasen,
+// och DatabaseManager klassen är en fasadklass som samordnar anslutning,
+// fråga och frånkoppling av databasen.
+// I klienten skapas en instans av DatabaseManager och används för att
+// skapa en tabell, lägga till data i tabellen och hämta data från tabellen.
+// Genom att använda en fasadklass kan klienten interagera med flera
+// underliggande klasser genom ett enkelt gränssnitt utan att behöva känna
+// till de interna detaljerna i varje klass. 

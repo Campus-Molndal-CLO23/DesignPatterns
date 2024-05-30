@@ -151,4 +151,20 @@ namespace AdapterPatternExampleRealWorld
 // Output:
 // MySQL database connection opened.
 // Executing MySQL query: SELECT * FROM users
-//
+
+// Förklaring: 
+// I det här exemplet har vi två befintliga klasser, MySQLDatabase och PostgreSQLDatabase, 
+// som har olika metoder för att ansluta till databasen och köra frågor.
+// Vi skapar adapterklasser, MySQLAdapter och PostgreSQLAdapter, 
+// som implementerar IDatabase-interface och anpassar de befintliga metoderna 
+// till IDatabase-metoderna. Klienten använder IDatabase-interface för att
+// ansluta till databasen, köra frågor och koppla från databasen.
+// I huvudprogrammet skapar vi en instans av MySQLAdapter och en instans av
+// PostgreSQLAdapter och skickar dem till klienten för att utföra databasoperationer.
+// Klienten ansluter till databasen, kör en fråga och kopplar sedan från databasen.
+// Detta möjliggör att klienten kan använda samma interface för att arbeta med
+// olika databaser utan att behöva känna till de specifika detaljerna för varje databas.
+// Adapter-mönstret används för att anpassa ett interface till ett annat.
+// Det kan vara användbart när du vill använda en klass som har ett interface som inte
+// passar med det interface som en klient förväntar sig. 
+

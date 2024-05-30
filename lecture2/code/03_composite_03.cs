@@ -90,3 +90,12 @@ namespace CompositePatternComplexExample2
 // Drawing Line
 // Drawing Circle
 // Drawing Rectangle
+
+// Förklaring:
+// I detta exempel har vi fyra klasser: Circle, Rectangle, Line och GraphicGroup.
+// Circle, Rectangle och Line är lövobjekt som implementerar IGraphic-gränssnittet.
+// GraphicGroup är ett kompositobjekt som innehåller en lista av IGraphic-objekt.
+// När programmet körs skapas några lövobjekt och ett kompositobjekt. Lövobjekten
+// läggs till i kompositobjektet och sedan ritas alla objekt i kompositstrukturen.
+// Eftersom kompositobjektet innehåller andra kompositobjekt och lövobjekt ritas
+// alla objekt i hela strukturen.

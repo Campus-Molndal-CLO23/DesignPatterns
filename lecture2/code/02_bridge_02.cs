@@ -89,3 +89,19 @@ namespace BridgePatternExample2
 // SMS sent: This is an urgent message!
 // Sending regular notification...
 // Email sent: This is a regular message.
+
+// Förklaring:
+// Bridge Pattern används för att separera abstraktionen från dess implementering 
+// så att de kan ändras oberoende av varandra. I det här exemplet har vi två hierarkier,
+// en för meddelanden och en för meddelandesändare. Abstraktionen är Notification-klassen,
+// som har en IMessageSender-instans. IMessageSender är implementeringsgränssnittet för
+// meddelandesändare. UrgentNotification och RegularNotification är raffinerade abstraktioner
+// som skickar meddelanden via IMessageSender-instansen. SmsSender och EmailSender är konkreta
+// implementeringar av IMessageSender som skickar meddelanden via SMS respektive e-post.
+// I huvudprogrammet skapas en instans av SmsSender och en instans av UrgentNotification
+// som tar SmsSender-instansen som argument. En brådskande notifikation skickas via SMS.
+// En instans av EmailSender och en instans av RegularNotification skapas och en vanlig notifikation
+// skickas via e-post.
+// Bridge-mönstret används för att separera abstraktionen från implementeringen.
+// Detta möjliggör att de kan ändras oberoende av varandra.
+// I det här fallet kan vi enkelt byta ut meddelandesändare utan att ändra i Notification-klassen.

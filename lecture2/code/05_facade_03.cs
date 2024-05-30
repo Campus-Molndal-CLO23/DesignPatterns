@@ -65,3 +65,11 @@ namespace FacadePatternExample4
 // Processing payment of $1200
 // Shipping Laptop to 1234 Elm Street
 // Order placed successfully!
+
+
+// Förklaring:
+// I detta exempel har vi tre klasser: PaymentProcessor, ShippingService och OrderFacade.
+// OrderFacade är en fasadklass som samordnar interaktionen mellan PaymentProcessor och ShippingService.
+// OrderFacade har en metod PlaceOrder som hanterar hela processen för att placera en order.
+// Genom att använda OrderFacade kan klienten placera en order med en enkel metodanrop.
+// Detta möjliggör en enkel och tydlig gränssnitt för att interagera med de underliggande systemen.

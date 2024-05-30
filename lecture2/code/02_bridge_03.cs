@@ -89,3 +89,17 @@ namespace BridgePatternExample3
 // Credit card payment processed: $150.00
 // Processing in-store payment...
 // PayPal payment processed: $75.00
+
+// Förklaring:
+// I detta exempel har vi två hierarkier: Payment och IPaymentProcessor. 
+// Payment är en abstrakt klass som har en referens till en IPaymentProcessor.
+// OnlinePayment och InStorePayment är två klasser som är subklasser till Payment
+// och som implementerar MakePayment-metoden. IPaymentProcessor är ett gränssnitt
+// som definierar ProcessPayment-metoden. CreditCardProcessor och PayPalProcessor
+// är två klasser som implementerar IPaymentProcessor. I huvudprogrammet skapas
+// en instans av CreditCardProcessor och en instans av OnlinePayment. En instans
+// av PayPalProcessor och en instans av InStorePayment skapas också. När MakePayment
+// anropas på OnlinePayment och InStorePayment, anropas ProcessPayment på respektive
+// IPaymentProcessor-instans.
+//
+// Bridge Pattern används för att separera abstraktionen från dess implementering

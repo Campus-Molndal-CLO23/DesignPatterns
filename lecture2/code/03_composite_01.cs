@@ -99,3 +99,14 @@ namespace CompositePatternExample
 // Developer: John, Id: 100, Position: Senior Developer
 // Developer: Doe, Id: 101, Position: Junior Developer
 // Manager: Anna, Id: 200, Position: Manager
+
+// Förklaring:
+// I detta exempel har vi tre klasser: Developer, Manager och Directory. 
+// Developer och Manager är lövobjekt som representerar anställda i företaget. 
+// Directory är en kompositnod som kan ha andra Directory-objekt eller lövobjekt 
+// som barn. I Main-metoden skapas två Developer-objekt, ett Manager-objekt och 
+// ett Directory-objekt. De två Developer-objekten läggs till i Directory-objektet. 
+// Directory-objektet och Manager-objektet läggs sedan till i ett nytt Directory-objekt 
+// som representerar hela företaget. När ShowDetails-metoden anropas på det sista 
+// Directory-objektet skrivs detaljerna för alla anställda ut. Detta möjliggör en 
+// hierarkisk struktur för att hantera anställda i företaget.

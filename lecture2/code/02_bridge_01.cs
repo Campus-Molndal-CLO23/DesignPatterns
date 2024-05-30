@@ -115,3 +115,28 @@ namespace BridgePatternExample
 // Volume level: 6
 // Volume level: 5
 // Muted
+
+// Förklaring:
+// I detta exempel har vi två hierarkier: 
+// en för fjärrkontrollen och en för enheterna som fjärrkontrollen kontrollerar.
+// Abstraction definierar gränssnittet för kontrollen av enheterna.
+// RemoteControl är en abstrakt klass som innehåller en instans av IDevice.
+// AdvancedRemoteControl är en raffinerad abstraktion som utökar gränssnittet 
+// definierat av Abstraction.
+// IDevice definierar gränssnittet för enheterna som fjärrkontrollen kontrollerar.
+// TV och Radio är konkreta implementeringar av IDevice.
+// I huvudprogrammet skapas en instans av TV och en instans av 
+// AdvancedRemoteControl som tar TV-instansen som argument.
+// Fjärrkontrollen används för att slå på och av TV:n, öka och minska volymen,
+// och sätta volymen till 0 (mute).
+// Sedan skapas en instans av Radio och en instans av AdvancedRemoteControl som
+// tar Radio-instansen som argument. Fjärrkontrollen används för att slå på och
+// av radion, öka och minska volymen, och sätta volymen till 0 (mute).
+// Observera att Mute funktionen inte finns i Abstraction-gränssnittet, utan
+// endast i AdvancedRemoteControl-gränssnittet. Detta är en fördel med Bridge-mönstret,
+// eftersom det möjligör att lägga till nya funktioner i den raffinerade abstraktionen
+// utan att ändra i abstraktionen.
+// Bridge-mönstret används för att separera abstraktionen från implementeringen.
+// Det kan vara användbart när du vill kunna ändra eller byta ut implementeringen
+// utan att behöva ändra i abstraktionen. Det kan också vara användbart när du vill
+// lägga till nya funktioner i den raffinerade abstraktionen utan att ändra i abstraktionen.

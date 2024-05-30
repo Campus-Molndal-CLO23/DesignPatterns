@@ -95,3 +95,16 @@ namespace CompositePatternComplexExample
 // ------File4.txt
 // --File1.txt
 // --File2.txt
+
+// Förklaring:
+// I detta exempel har vi tre klasser: File, Directory och Program.
+// File är en leaf-klass som representerar filer i ett filsystem.
+// Directory är en composite-klass som representerar kataloger i ett filsystem.
+// Program är en klient som skapar filer och kataloger och lägger till dem i en hierarki.
+// När programmet körs skapas en hierarki av filer och kataloger och sedan visas strukturen.
+// Composite pattern används för att skapa en hierarki av objekt där både lövobjekt och kompositobjekt
+// kan behandlas på samma sätt. I det här fallet kan både filer och kataloger läggas till i en katalog,
+// och hela strukturen kan visas rekursivt. Composite pattern används ofta för att skapa trädstrukturer
+// av objekt där både individuella objekt och grupper av objekt kan behandlas på samma sätt. Detta möjliggör
+// att klienten kan arbeta med komplexa strukturer av objekt på ett enhetligt sätt. Composite pattern används
+// ofta i grafiska användargränssnitt, dokumentstrukturer och andra situationer där det finns en hierarki av objekt.

@@ -76,3 +76,16 @@ namespace DecoratorPatternAdvancedExample
 // Checking cache for query: SELECT * FROM users
 // Logging: Executing query: SELECT * FROM users
 // Executing query: SELECT * FROM users
+
+
+// Förklaring:
+// I detta exempel har vi två klasser: LoggingDataAccess och CachingDataAccess.
+// LoggingDataAccess och CachingDataAccess är båda dekoratörer som lägger till 
+// funktionalitet till en befintlig klass som implementerar IDataAccess-gränssnittet.
+// I klienten skapas en instans av DatabaseAccess-klassen och sedan läggs
+// LoggingDataAccess och CachingDataAccess till i en kedja. När ExecuteQuery-metoden
+// anropas på den sista dekoratören i kedjan kommer alla dekoratörer att köras i
+// ordning och funktionaliteten från varje dekoratör kommer att läggas till i
+// den ursprungliga implementationen av ExecuteQuery-metoden i DatabaseAccess-klassen.
+// Detta möjliggör att funktionalitet kan läggas till dynamiskt utan att ändra den
+// ursprungliga klassen.

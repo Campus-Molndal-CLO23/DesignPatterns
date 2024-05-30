@@ -165,3 +165,8 @@ namespace AdapterPatternExample3
 // Connected to Google Cloud Storage.
 // File 'file2.txt' downloaded from Google Cloud Storage.
 // Disconnected from Google Cloud Storage.
+
+// Förklaring: 
+// Adapter-mönstret används för att anpassa två olika klasser till samma interface.
+// Två olika molnlagringstjänster ansluts, filer laddas upp och laddas ner.
+// Adapter-mönstret används för att anpassa ett interfaces till ett annat.

@@ -75,3 +75,25 @@ namespace AdapterPatternExample
 
 // Output:
 // Called SpecificRequest()
+
+// Förklaring:
+// ITarget är den interface som klienter förväntas arbeta med. 
+// Adaptee är den befintliga klassen med ett annat interface. 
+// Adapter är klassen som anpassar Adaptee:s interface till ITarget:s interface.
+// Adapter-klassen tar en instans av Adaptee i konstruktorn och implementerar Request-metoden
+// från ITarget genom att anropa SpecificRequest på Adaptee-instansen.
+// Client-klassen använder ITarget-interfacet och tar en instans av ITarget i konstruktorn.
+// MakeRequest-metoden på Client anropar Request-metoden på ITarget-instansen.
+// I huvudprogrammet skapas en instans av Adaptee, en instans av Adapter som 
+// omsluter Adaptee-instansen
+// och en instans av Client som använder ITarget-interfacet. 
+// En förfrågan görs med Client, som internt anropar SpecificRequest på Adaptee.
+// Adapter-mönstret används för att anpassa ett interfaces till ett annat.
+
+// Adapter-mönstret kan användas för att anpassa ett interface till ett annat.
+// Det kan vara användbart när du vill använda en klass som har ett interface som inte
+// passar med det interface som en klient förväntar sig. Adapter-mönstret kan användas
+// för att skapa en adapterklass som anpassar det befintliga interfacet till det önskade
+// interfacet. Detta kan vara användbart när du vill använda en befintlig klass i en
+// applikation utan att behöva ändra koden i den befintliga klassen. 
+

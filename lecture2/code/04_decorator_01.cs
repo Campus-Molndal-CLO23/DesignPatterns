@@ -61,3 +61,13 @@ namespace DecoratorPatternSimpleExample
 // Output:
 // Log: Starting application
 // Log: 2024-05-29 12:34:56: Application started
+
+// Förklaring:
+// I detta exempel har vi två klasser: ConsoleLogger och TimestampLogger. 
+// ConsoleLogger är en Concrete Component som implementerar ILogger-gränssnittet. 
+// TimestampLogger är en Concrete Decorator som ärver från LoggerDecorator och 
+// lägger till en tidsstämpel till loggmeddelandet. I Main-metoden skapas en instans 
+// av ConsoleLogger och ett meddelande loggas. Sedan skapas en instans av TimestampLogger
+// som tar en ConsoleLogger som parameter. Ett meddelande loggas igen och denna gång 
+// innehåller det en tidsstämpel. Detta möjliggör att funktionalitet kan läggas till 
+// dynamiskt utan att ändra den ursprungliga klassen.

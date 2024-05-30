@@ -64,3 +64,11 @@ namespace FacadePatternExample3
 // File myfile.txt uploaded to AWS S3.
 // File myfile.txt uploaded to Azure Blob Storage.
 // File myfile.txt uploaded to Google Cloud Storage.
+
+
+// Förklaring:
+// I detta exempel har vi fyra klasser: AwsS3Uploader, AzureBlobUploader, GoogleCloudUploader och CloudStorageFacade.
+// Facade-klassen CloudStorageFacade har metoden UploadToAll som anropar 
+// Upload-metoden på varje underliggande klass. När vi skapar en instans av
+// CloudStorageFacade och anropar UploadToAll-metoden skrivs filen myfile.txt
+// till alla tre molnlagringstjänster.
