@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: rose-pine
+theme: default
 class: invert
 paginate: true
 ---

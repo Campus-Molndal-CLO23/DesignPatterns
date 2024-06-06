@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: gaia
+theme: default
 class: invert
 paginate: true
 backgroundColor: #1E1E1E
@@ -86,7 +86,11 @@ public class ScoreBoard : ISubject
             Notify();
         }
     }
+```
 
+---
+
+```csharp
     public void Attach(IObserver observer)
     {
         _observers.Add(observer);
@@ -275,6 +279,3 @@ class Program
 
 Observer-mönstret och händelsehantering med events ger båda möjligheten att notifiera objekt om ändringar i andra objekt. Observer-mönstret erbjuder större flexibilitet och följer ett välkänt designmönster, medan events i C# ger en enkel och effektiv lösning för många scenarier.
 
----
-
-Detta avslutar föreläsningen om Observer-mönstret. Nästa gång kommer vi att gå igenom State designmönstret. Se till att ni förstår hur observermönstret fungerar och testa att implementera egna exempel!
