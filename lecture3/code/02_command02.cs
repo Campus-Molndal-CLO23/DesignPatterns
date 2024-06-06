@@ -110,3 +110,6 @@ class Program
         remote.PressOffButton();
 
         // Ångra 
+        remote.PressUndoButton(lightOn);
+    }
+}
