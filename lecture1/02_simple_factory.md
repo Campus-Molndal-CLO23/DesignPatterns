@@ -38,7 +38,7 @@ Simple Factory är ett designmönster där en fabriksklass har en metod som retu
 
 # Struktur av Simple Factory
 
-![Simple Favtory](images/02_simple_factory_01.png)
+![h:550](images/02_simple_factory_01.png "Simple Factory")
 
 ---
 
@@ -46,7 +46,7 @@ Simple Factory är ett designmönster där en fabriksklass har en metod som retu
 
 Vi ska nu gå igenom ett exempel där vi har en fabriksklass som skapar olika produkter baserat på en parameter.
 
-![Simple factory](images/02_simple_factory_02.png)
+![h:550](images/02_simple_factory_02.png)
 
 ---
 
@@ -56,7 +56,7 @@ Tänk er att vi har en applikation som ska hantera olika typer av dokument: text
 
 ---
 
-![Simple factory 3](images/02_simple_factory_03.png)
+![h:550](images/02_simple_factory_03.png)
 
 ---
 

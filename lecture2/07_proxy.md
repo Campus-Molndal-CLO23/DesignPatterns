@@ -104,7 +104,7 @@ public class ProxyImage : IImage
 
 ## Klassdiagram
 
-![proxy](images/07_proxy.png)
+![h:550](images/07_proxy.png)
 
 ---
 

@@ -38,7 +38,7 @@ Builder är ett designmönster som låter dig skapa komplexa objekt genom att sp
 
 Låt oss titta på den grundläggande strukturen för Builder-mönstret.
 
-![Builder pattern](images/05_builder_01.png)
+![h:550](images/05_builder_01.png)
 
 ---
 
@@ -57,7 +57,7 @@ Builder-mönstret involverar följande komponenter:
 
 Tänk dig att vi vill skapa en emailadress.
 
-![Builder pattern](images/05_builder_02.png)
+![h:550](images/05_builder_02.png)
 
 ---
 

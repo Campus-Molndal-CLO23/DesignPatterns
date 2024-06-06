@@ -161,7 +161,7 @@ TV is Muted
 
 ## Klassdiagram
 
-![Bridge Pattern](images/02_bridge.png)
+![h:550](images/02_bridge.png)
 
 ---
 

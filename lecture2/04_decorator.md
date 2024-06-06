@@ -92,7 +92,7 @@ public class SMSNotifier : NotifierDecorator
 
 ## Klassdiagram
 
-![Decorator](images/04_decorator.png)
+![h:550](images/04_decorator.png)
 
 
 ---

@@ -109,7 +109,7 @@ public class Tree
 
 ## Klassdiagram
 
-![Flyweight Pattern](images/06_flyweight.png)
+![h:550](images/06_flyweight.png)
 
 ---
 

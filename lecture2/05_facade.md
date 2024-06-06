@@ -112,7 +112,7 @@ public class Facade
 
 ## Klassdiagram
 
-![Facade Pattern](./images/05_facade.png)
+![h:550](./images/05_facade.png)
 
 ---
 

@@ -41,7 +41,7 @@ Det används för att skapa grupper av objekt som hör ihop och behöver använd
 
 Låt oss titta på den grundläggande strukturen för Abstract Factory-mönstret.
 
-![Abstract factory](images/04_abstract_factory_01.png)
+![h:550](images/04_abstract_factory_01.png)
 
 ---
 
@@ -93,7 +93,7 @@ Vi kan använda Abstract Factory för att skapa familjer av relaterade dokumento
 
 Med Abstract Factory kan vi skapa olika dokument på ett strukturerat sätt.
 
-![Abstract factory](images/04_abstract_factory_02.png)
+![h:550](images/04_abstract_factory_02.png)
 
 ---
 

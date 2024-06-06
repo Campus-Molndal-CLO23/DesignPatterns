@@ -37,7 +37,7 @@ Singleton är ett designmönster som säkerställer att en klass har endast en i
 
 # Struktur av Singleton
 
-![alt text](images/singleton01.png)
+![h:550](images/singleton01.png)
 
 ---
 

@@ -48,13 +48,13 @@ Factory Method är ett designmönster som tillåter objekt att skapas utan att s
 
 Grundläggande strukturen för Factory Method-mönstret.
 
-![Factory method](images/03_factory_method_01.png)
+![h:550](images/03_factory_method_01.png)
     
 ---
 
 Exempel av skapande med hjälp av Factory Method.
 
-![Factory method](images/03_factory_method_02.png)
+![h:550](images/03_factory_method_02.png)
 
 ---
 
@@ -76,7 +76,7 @@ pdf.Save();
 
 Nu kan vi skapa dokument utan att direkt referera till de konkreta dokumentklasserna.
 
-![Factory method](images/03_factory_method_03.png)
+![h:550](images/03_factory_method_03.png)
 
 
 ---

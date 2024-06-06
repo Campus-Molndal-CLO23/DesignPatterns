@@ -94,7 +94,7 @@ public class CompositeGraphic : IGraphic
 
 ## Klassdiagram
 
-![Composite](images/03_composite.png)
+![h:550](images/03_composite.png)
 
 ---
 

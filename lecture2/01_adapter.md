@@ -33,7 +33,7 @@ Vi behöver en adapter för att göra dessa kompatibla.
 
 ## UML-diagram
 
-![Adapter](images/01_adapter.png)
+![h:550](images/01_adapter.png)
 
 ---
 
