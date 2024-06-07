@@ -1,98 +1,87 @@
-import java.util.ArrayList;
-import java.util.List;
+using System;
+using System.Collections.Generic;
 
-/* Interface for mediator */
-public interface ChatMediator {
-    void sendMessage(String message, User user);
-    void addUser(User user);
+/* Gränssnitt för mediator */
+public interface IChatMediator
+{
+    void SendMessage(string message, User user);
+    void AddUser(User user);
 }
 
-/* Concrete mediator to handle messages */
-public class ChatMediatorImpl implements ChatMediator {
-    private List<User> users = new ArrayList<>();
+/* Konkret mediator för att hantera meddelanden */
+public class ChatMediator : IChatMediator
+{
+    private List<User> _users = new List<User>();
 
-    @Override
-    public void addUser(User user) {
-        users.add(user);
+    public void AddUser(User user)
+    {
+        _users.Add(user);
     }
 
-    @Override
-    public void sendMessage(String message, User user) {
-        for (User u : users) {
-            // Do not send the message back to the sender
-            if (u != user) {
-                u.receive(message);
+    public void SendMessage(string message, User user)
+    {
+        foreach (var u in _users)
+        {
+            // Meddelandet ska inte skickas tillbaka till avsändaren
+            if (u != user)
+            {
+                u.Receive(message);
             }
         }
     }
 }
 
-/* Abstract class for user */
-public abstract class User {
-    protected ChatMediator mediator;
-    protected String name;
+/* Abstrakt klass för användare */
+public abstract class User
+{
+    protected IChatMediator _mediator;
+    protected string _name;
 
-    public User(ChatMediator mediator, String name) {
-        this.mediator = mediator;
-        this.name = name;
+    public User(IChatMediator mediator, string name)
+    {
+        _mediator = mediator;
+        _name = name;
     }
 
-    public abstract void send(String message);
-    public abstract void receive(String message);
+    public abstract void Send(string message);
+    public abstract void Receive(string message);
 }
-/* Concrete class for a user */
-public class ConcreteUser extends User {
 
-    public ConcreteUser(ChatMediator mediator, String name) {
-        super(mediator, name);
+/* Konkret klass för en användare */
+public class ConcreteUser : User
+{
+    public ConcreteUser(IChatMediator mediator, string name) : base(mediator, name)
+    {
     }
 
-    @Override
-    public void send(String message) {
-        System.out.println(name + " sends: " + message);
-        mediator.sendMessage(message, this);
+    public override void Send(string message)
+    {
+        Console.WriteLine($"{_name} sends: {message}");
+        _mediator.SendMessage(message, this);
     }
 
-    @Override
-    public void receive(String message) {
-        System.out.println(name + " receives: " + message);
+    public override void Receive(string message)
+    {
+        Console.WriteLine($"{_name} receives: {message}");
     }
 }
-public class Main {
-    public static void main(String[] args) {
-        ChatMediator mediator = new ChatMediatorImpl();
+
+/* Programklass för att demonstrera chattapplikation med Mediator-mönstret */
+class Program
+{
+    static void Main()
+    {
+        IChatMediator mediator = new ChatMediator();
 
         User user1 = new ConcreteUser(mediator, "Alice");
         User user2 = new ConcreteUser(mediator, "Bob");
         User user3 = new ConcreteUser(mediator, "Charlie");
 
-        mediator.addUser(user1);
-        mediator.addUser(user2);
-        mediator.addUser(user3);
+        mediator.AddUser(user1);
+        mediator.AddUser(user2);
+        mediator.AddUser(user3);
 
-        user1.send("Hello, everyone!");
-        user2.send("Hi Alice!");
+        user1.Send("Hello, everyone!");
+        user2.Send("Hi Alice!");
     }
 }
-
-/*
-Explanation
-Interface for Mediator:
-ChatMediator defines methods for sending messages and adding users.
-
-Concrete Mediator:
-ChatMediatorImpl implements the ChatMediator interface.
-It maintains a list of users and handles message sending by iterating over the list and calling the receive method on all users except the sender.
-
-Abstract User Class:
-User defines the common structure for users, including the mediator and the user's name.
-It declares abstract methods send and receive.
-
-Concrete User Class:
-ConcreteUser extends User and provides implementations for the send and receive methods.
-When a message is sent, it is printed to the console, and the mediator's sendMessage method is called.
-
-Main Class:
-Demonstrates the chat application using the Mediator pattern.
-Creates instances of ChatMediator and ConcreteUser, adds users to the mediator, and sends messages between users.
-*/
