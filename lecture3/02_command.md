@@ -142,9 +142,10 @@ public class RemoteControl
 {
     private ICommand _command;
 
-    public void SetCommand(ICommand command)
+    public RemoteControl SetCommand(ICommand command)
     {
         _command = command;
+        return this; // <-- Marcus specialare!
     }
 
     public void PressButton()
@@ -171,8 +172,7 @@ class Program
 
         RemoteControl remote = new RemoteControl();
 
-        remote.SetCommand(turnOn);
-        remote.PressButton();
+        remote.SetCommand(turnOn).PressButton();
 
         remote.SetCommand(turnOff);
         remote.PressButton();

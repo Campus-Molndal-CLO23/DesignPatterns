@@ -82,8 +82,11 @@ public class ScoreBoard : ISubject
         get { return _highScore; }
         set
         {
-            _highScore = value;
-            Notify();
+            if (value > _highScore)
+            {
+                _highScore = value;
+                Notify();
+            }
         }
     }
 ```
@@ -162,9 +165,9 @@ class Program
         ScoreBoard scoreBoard = new ScoreBoard();
         HighScoreDisplay highScoreDisplay = new HighScoreDisplay(scoreBoard);
 
-        scoreBoard.HighScore = 100;
-        scoreBoard.HighScore = 200;
-        scoreBoard.HighScore = 150;
+        scoreBoard.HighScore = 100; // New high score: 100
+        scoreBoard.HighScore = 200; // New high score: 200
+        scoreBoard.HighScore = 150; //
     }
 }
 ```
@@ -212,8 +215,11 @@ public class ScoreBoard
         get { return _highScore; }
         set
         {
-            _highScore = value;
-            HighScoreChanged?.Invoke(_highScore);
+            if (value > _highScore)
+            {
+                _highScore = value;
+                HighScoreChanged?.Invoke(_highScore);
+            }
         }
     }
 }

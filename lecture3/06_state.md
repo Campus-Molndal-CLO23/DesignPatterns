@@ -160,10 +160,10 @@ class Program
     {
         TrafficLightContext context = new TrafficLightContext(new GreenState());
 
-        context.Request();
-        context.Request();
-        context.Request();
-        context.Request();
+        context.Request(); // Green Light - Go
+        context.Request(); // Yellow Light - Slow Down
+        context.Request(); // Red Light - Stop
+        context.Request(); // Green Light - Go
     }
 }
 ```
@@ -261,6 +261,8 @@ State-mönstret löser dessa problem genom att separera tillstånd och beteenden
 - Om vi skapar en liten avatar kan vi sätta olika känslolägen på den beroende på situationer, genom state-mönstret. 
 - Vi kan även spara olika tillstånd i en spelapplikation, som att spara spelet, ladda spelet, starta spelet, etc.
 - Vi kan även använda state-mönstret för att hantera olika tillstånd i en beställningsprocess, som att skapa, skicka, leverera, etc.
+
+--- 
 
 ## Sammanfattning
 

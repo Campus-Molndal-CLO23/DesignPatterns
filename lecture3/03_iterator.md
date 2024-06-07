@@ -194,6 +194,8 @@ public Book this[int index]
 }
 ```
 
+Indexer operator som används för att komma åt element i samlingen. Den fungerar med både get och set.
+
 ---
 
 ## Book Class
@@ -240,7 +242,14 @@ class Program
         {
             Console.WriteLine(book.Title);
         }
-}
+
+        while (!iterator.IsDone())
+        {
+            Console.WriteLine(iterator.CurrentItem().Title);
+            iterator.Next();
+        }
+
+    }
 }
 ```
 

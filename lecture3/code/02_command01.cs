@@ -102,18 +102,22 @@ class Program
         ICommand appendCommand1 = new AppendTextCommand(editor, "Hello ");
         commandManager.ExecuteCommand(appendCommand1);
         Console.WriteLine("Text: " + editor.GetText());
+        // Output: Text: Hello
 
         // Lägg till mer text och visa resultatet
         ICommand appendCommand2 = new AppendTextCommand(editor, "World!");
         commandManager.ExecuteCommand(appendCommand2);
         Console.WriteLine("Text: " + editor.GetText());
+        // Output: Text: Hello World!
 
         // Ångra senaste kommandot och visa resultatet
         commandManager.Undo();
         Console.WriteLine("Text efter Undo: " + editor.GetText());
+        // Output: Text efter Undo: Hello
 
         // Gör om senaste kommandot och visa resultatet
         commandManager.Redo();
         Console.WriteLine("Text efter Redo: " + editor.GetText());
+        // Output: Text efter Redo: Hello World!
     }
 }

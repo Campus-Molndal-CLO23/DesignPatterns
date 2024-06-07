@@ -35,7 +35,7 @@ Det fungerar som en Switch men med flera nivåer av hantering. Om en handler int
 
 ## Struktur
 
-![h:550](./images/01_chainOfResponsability.png)
+![w:100%](./images/01_chainOfResponsability.png)
 
 ---
 
@@ -53,6 +53,7 @@ public interface IHandler
 
 _Detta påminner mycket om en länkad lista_ ;)
 (OBS! .net har redan en sådan i `LinkedList<T>`)
+
 ---
 
 ## Vad gör interfacet?
@@ -85,6 +86,8 @@ public abstract class AbstractHandler : IHandler
 ```csharp
     public virtual void Handle(string request)
     {
+        // Kod som hanterar begäran
+        // Om handler inte kan hantera begäran, skicka vidare till nästa handler
         if (_nextHandler != null)
         {
             _nextHandler.Handle(request);
@@ -151,6 +154,8 @@ public class MidLevelHandler : AbstractHandler
     }
 }
 ```
+
+---
 
 ### HighLevelHandler
 
@@ -493,8 +498,6 @@ public abstract class AbstractTemperatureHandler : ITemperatureHandler
 
 ## Konkreta TemperaturHandlers
 
-### SkiHandler
-
 ```csharp
 public class SkiHandler : AbstractTemperatureHandler
 {
@@ -511,6 +514,7 @@ public class SkiHandler : AbstractTemperatureHandler
     }
 }
 ```
+---
 
 ### BubbleHandler
 
@@ -530,6 +534,7 @@ public class BubbleHandler : AbstractTemperatureHandler
     }
 }
 ```
+---
 
 ### WarmHandler
 
@@ -573,6 +578,8 @@ public class SunbatheHandler : AbstractTemperatureHandler
 }
 ```
 
+---
+
 ### IceCreamHandler
 
 ```csharp
@@ -591,6 +598,8 @@ public class IceCreamHandler : AbstractTemperatureHandler
     }
 }
 ```
+
+---
 
 ### SwimHandler
 

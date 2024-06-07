@@ -31,13 +31,12 @@ Template Method-mönstret används för att definiera skelettet av en algoritm i
 - När du vill följa "Don't Repeat Yourself" (DRY) principen.
 - Är kompatibel med Open/Closed Principle.
 - Är kompatibel med strategimönstret.
-- Du kan byr
 
 ---
 
 ## Struktur
 
-![h:550](./images/08_template.png "Template Method Pattern")
+![w:100%](./images/08_template.png "Template Method Pattern")
 
 ---
 
@@ -275,19 +274,15 @@ Låt oss jämföra Template Method-mönstret med en manuell implementering utan 
 public class Sorter
 {
     public void BubbleSort(int[] array)
-    {        // massor med kod
-    }
+    {        // massor med kod     }
 
     public void QuickSort(int[] array)
-    {   // massor med kod
-    }
+    {   // massor med kod     }
     private int Partition(int[] array, int low, int high)
-    {   // massor med kod
-    }
+    {   // massor med kod       }
 
     public void InsertionSort(int[] array)
-    {   // massor med kod
-    }
+    {   // massor med kod       }
 }
 ```
 

@@ -44,7 +44,10 @@ public class BookIterator : IIterator<Book>
 
     public Book Next()
     {
-        return _books[_position++];
+        if(HasNext())
+            return _books[_position++];
+        else
+            return null;
     }
 }
 

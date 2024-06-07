@@ -89,6 +89,40 @@ public class EmailValidator : AbstractValidator
     }
 }
 
+public class RegExValidator : AbstractValidator
+{
+    protected override bool HandleValidation(UserInput input)
+    {
+        // Implementera validering med reguljära uttryck här
+        const string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+        if (string.IsNullOrEmpty(input.Email) || !Regex.IsMatch(input.Email, emailPattern))
+        {
+            Console.WriteLine("Invalid email address.");
+            return false; // Validering misslyckades
+        }
+        return true; // Validering lyckades
+    }
+}
+
+public class NoSwedishCharsValidator : AbstractValidator
+{
+    protected override bool HandleValidation(UserInput input)
+    {
+        if (string.IsNullOrEmpty(input.Username) || !input.containsSwedishChars())
+        {
+            Console.WriteLine("Username must not contain any Swedish characters.");
+            return false; // Validering misslyckades
+        }
+        return true; // Validering lyckades
+    }
+
+    private bool containsSwedishChars(string input)
+    {
+        return input.Any(c => "åäö".Contains(c));
+    }
+}
+
+
 // Programklass för att demonstrera valideringskedjan
 class Program
 {
@@ -96,7 +130,12 @@ class Program
     {
         // Skapar valideringskedjan
         IValidator validatorChain = new UsernameValidator();
-        validatorChain.SetNext(new PasswordValidator()).SetNext(new EmailValidator());
+        validatorChain
+            .SetNext(new PasswordValidator())
+            .SetNext(new EmailValidator())
+            .SetNext(new NoSwedishCharsValidator())
+            .SetNext(new RegExValidator())
+            ;
 
         // Skapar en UserInput-objekt
         UserInput input = new UserInput
