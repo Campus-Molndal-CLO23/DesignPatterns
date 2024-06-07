@@ -1,29 +1,77 @@
-public abstract class RomanNumeralHandler {
+using System;
+using System.Collections.Generic;
+
+/* 
+ * Abstrakt klass som definierar gränssnittet för att hantera en förfrågan om romerska siffror.
+ * Den har metoder för att sätta nästa handler i kedjan och för att hantera en förfrågan.
+ */
+public abstract class RomanNumeralHandler
+{
     protected RomanNumeralHandler next;
 
-    public void setNext(RomanNumeralHandler next) {
+    // Sätt nästa handler i kedjan
+    public void SetNext(RomanNumeralHandler next)
+    {
         this.next = next;
     }
 
-    public int handleRequest(String roman) {
-        if (roman.startsWith(getSymbol())) {
-            return getValue() + next.handleRequest(roman.substring(getSymbol().length()));
-        } else if (next != null) {
-            return next.handleRequest(roman);
-        } else {
+    // Hantera förfrågan om konvertering av romerska siffror till heltal
+    public int HandleRequest(string roman)
+    {
+        if (roman.StartsWith(GetSymbol()))
+        {
+            return GetValue() + (next != null ? next.HandleRequest(roman.Substring(GetSymbol().Length)) : 0);
+        }
+        else if (next != null)
+        {
+            return next.HandleRequest(roman);
+        }
+        else
+        {
             return 0;
         }
     }
 
-    protected abstract String getSymbol();
-    protected abstract int getValue();
+    // Abstrakta metoder för att få symbol och värde, implementeras i konkreta klasser
+    protected abstract string GetSymbol();
+    protected abstract int GetValue();
 }
 
-import java.util.List;
+/*
+ * Konkret klass som implementerar RomanNumeralHandler och representerar en specifik symbol och dess värde.
+ */
+public class SymbolHandler : RomanNumeralHandler
+{
+    private readonly string symbol;
+    private readonly int value;
 
-public class RomanNumeralChainBuilder {
-    public static RomanNumeralHandler buildChain() {
-        List<SymbolHandler> handlers = List.of(
+    public SymbolHandler(string symbol, int value)
+    {
+        this.symbol = symbol;
+        this.value = value;
+    }
+
+    protected override string GetSymbol()
+    {
+        return symbol;
+    }
+
+    protected override int GetValue()
+    {
+        return value;
+    }
+}
+
+/*
+ * Klass som bygger en kedja av SymbolHandler-objekt för att hantera konvertering av romerska siffror till heltal.
+ */
+public class RomanNumeralChainBuilder
+{
+    public static RomanNumeralHandler BuildChain()
+    {
+        // Skapa en lista med handlers för varje romersk siffersymbol och dess värde
+        List<SymbolHandler> handlers = new List<SymbolHandler>
+        {
             new SymbolHandler("MMMMMMMMM", 9000),
             new SymbolHandler("MMMMMMMM", 8000),
             new SymbolHandler("MMMMMMM", 7000),
@@ -45,33 +93,52 @@ public class RomanNumeralChainBuilder {
             new SymbolHandler("V", 5),
             new SymbolHandler("IV", 4),
             new SymbolHandler("I", 1)
-        );
+        };
 
-        for (int i = 0; i < handlers.size() - 1; i++) {
-            handlers.get(i).setNext(handlers.get(i + 1));
+        // Bygg kedjan genom att länka varje handler till nästa
+        for (int i = 0; i < handlers.Count - 1; i++)
+        {
+            handlers[i].SetNext(handlers[i + 1]);
         }
-        return handlers.get(0);
+
+        // Returnera den första handlern i kedjan
+        return handlers[0];
     }
 }
 
-public class RomanNumeralConverter {
-    private final RomanNumeralHandler chain;
+/*
+ * Klass som använder en kedja av RomanNumeralHandler-objekt för att konvertera en romersk siffra till ett heltal.
+ */
+public class RomanNumeralConverter
+{
+    private readonly RomanNumeralHandler chain;
 
-    public RomanNumeralConverter() {
-        this.chain = RomanNumeralChainBuilder.buildChain();
+    public RomanNumeralConverter()
+    {
+        this.chain = RomanNumeralChainBuilder.BuildChain();
     }
 
-    public int convert(String roman) {
-        return chain.handleRequest(roman);
+    public int Convert(string roman)
+    {
+        return chain.HandleRequest(roman);
     }
+}
 
-    public static void main(String[] args) {
+/*
+ * Huvudklassen som demonstrerar hur man använder RomanNumeralConverter för att konvertera romerska siffror till heltal.
+ */
+class Program
+{
+    static void Main(string[] args)
+    {
         RomanNumeralConverter converter = new RomanNumeralConverter();
-        String roman = "MCMXCIV"; // 1994
+
+        string roman = "MCMXCIV"; // 1994
         // 1994 = 1000 + 900 + 90 + 4 = M + CM + XC + IV
         // 1989 = 1000 + 900 + 80 + 9 = M + CM + LXXX + IX
         // 13 = 10 + 3 = X + III
-        int result = converter.convert(roman);
-        System.out.println("The integer value of " + roman + " is " + result);
+
+        int result = converter.Convert(roman);
+        Console.WriteLine($"The integer value of {roman} is {result}");
     }
 }
